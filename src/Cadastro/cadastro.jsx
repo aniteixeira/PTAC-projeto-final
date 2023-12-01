@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function ToDo() {
   const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
-  const [categoria, setCategoria] = useState("");
-  const [marca, setMarca] = useState("");
-  const [preco, setPreco] = useState("");
-  const [imagem, setImagem] = useState("");
-  const [lista, setLista ] = useState(listaLocalStorage || []);
+  const [nomeMusica, setNomeMusica] = useState("");
+  const [artista, setArtista] = useState("");
+  const [dataLanca, setDataLanca] = useState("");
+  const [link, setLink] = useState("");
   const [id,setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1 );
  
  useEffect(() => {
@@ -17,14 +16,14 @@ export default function ToDo() {
     const salvar =(e) =>{
         e.preventDefault();
          setLista([...lista, {
-            categoria: categoria, marca: marca, preco: preco, imagem: imagem,
+            nomeMusica: nomeMusica, artista: artista, dataLanca: dataLanca, link: link,
                 id: id
         }]);
          setId(id + 1);
-         setCategoria("");
-         setMarca("");
-         setPreco("");
-         setImagem("");
+         setNomeMusica("");
+         setArtista("");
+         setDataLanca("");
+         setLink("");
         };
       
     const remover = (id) => {
@@ -44,29 +43,28 @@ export default function ToDo() {
                   <div class="flex.conteiner">   
                   <form onSubmit={salvar}>
       
-                  <p>Categoria:</p>
+                  <p>Nome da Musica:</p>
                       &emsp;
-                  <input value={categoria} type="text"
-                  onChange={(e)=>{ setCategoria(e.target.value)}}/>
-                 
-              
+                  <input value={nomeMusica} type="text"
+                  onChange={(e)=>{ setNomeMusica(e.target.value)}}/>
+                
       
-                      <p>Marca:</p>
+                      <p>Artista:</p>
                       &emsp;
-                  <input value={marca} type="text"
-                  onChange={(e)=>{ setMarca(e.target.value)}}/>
+                  <input value={artista} type="text"
+                  onChange={(e)=>{ setArtista(e.target.value)}}/>
                   
       
-                  <p>Preço:</p>
+                  <p>Data de Lançamento:</p>
                       &emsp;
-                  <input value={preco} type="text"
-                  onChange={(e)=>{ setPreco(e.target.value)}}/>
+                  <input value={dataLanca} type="text"
+                  onChange={(e)=>{ setDataLanca(e.target.value)}}/>
                       &emsp;
       
-                      <p>Procurar Imagem:</p>
+                      <p>Link:</p>
                       &emsp;
-                  <input value={imagem} type="text"
-                  onChange={(e)=>{ setImagem(e.target.value)}}/>
+                  <input value={link} type="text"
+                  onChange={(e)=>{ setLink(e.target.value)}}/>
                       &emsp;
                   
                   <button>ADD</button>    
@@ -78,9 +76,9 @@ export default function ToDo() {
                   {lista.map((ativ)=>
                   <div key= {ativ.id}>
                       <Link to={'/detalhe/${ativ.id}'}>
-                      <p>Categoria:{ativ.categoria}</p></Link>
-                      <p>Marca:{ativ.marca}</p>
-                      <p>Preço:{ativ.preco}</p>
+                      <p>Nome da Musica:{ativ.categoria}</p></Link>
+                      <p>Artista:{ativ.marca}</p>
+                      <p>Data de Lançamento:{ativ.preco}</p>
                       <p><img src={ativ.imagem} alt=""/></p>
                       <button onClick={() => remover(ativ.id)}>Remover</button>
                   </div>
