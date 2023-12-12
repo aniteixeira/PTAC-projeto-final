@@ -7,7 +7,7 @@ export default function Cadastro() {
   const [NomeMusica, setNomeMusica] = useState("");
   const [Artista, setArtista] = useState("");
   const [Album, setAlbum] = useState("");
-  const [Link, setLink] = useState("");
+  const [Link, setLink] = useState(""); 
   const [lista, setLista ] = useState(listaLocalStorage || []);
   const [id,setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1 );
  
@@ -49,31 +49,31 @@ export default function Cadastro() {
                 <div>   
                   <form onSubmit={salvar}>
       
-                  <p>Nome da Musica:</p>
-                      &emsp;
-                  <input value={NomeMusica} type="text"
+            <p>Nome da Musica:</p>
+                     &emsp;
+                 <input value={NomeMusica} type="text"
                   onChange={(e)=>{ setNomeMusica(e.target.value)}}/>
                 
       
-                  <p>Artista:</p>
-                      &emsp;
-                  <input value={Artista} type="text"
+            <p>Artista:</p>
+                     &emsp;
+                 <input value={Artista} type="text"
                   onChange={(e)=>{ setArtista(e.target.value)}}/>
                   
       
-                  <p>Álbum:</p>
-                      &emsp;
-                  <input value={Album} type="text"
+            <p>Álbum:</p>
+                     &emsp;
+                 <input value={Album} type="text"
                   onChange={(e)=>{ setAlbum(e.target.value)}}/>
                       &emsp;
       
-                      <p>Link:</p>
-                      &emsp;
-                  <input value={Link} type="text"
+            <p>Link:</p>
+                     &emsp;
+                 <input value={Link} type="text"
                   onChange={(e)=>{ setLink(e.target.value)}}/>
                       &emsp;
                   
-                  <button>Cadastrar Música</button>    
+            <button>Cadastrar Música</button>    
                  <select onChange={(e) => { setImagem(e.target.value) }}>
                  </select>
                  
