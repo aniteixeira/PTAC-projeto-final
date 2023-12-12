@@ -33,18 +33,11 @@ export default function Cadastro() {
          navigate("/");
         };
       
-    const remover = (id) => {
-    const auxLista = [];
-        lista.map((lista) => {
-            if (lista.id !== id) {
-                auxLista.push(lista);
-            }
-            });
-         setLista(auxLista);
-        }
+
       
           return (
               <div>
+                <Header/>
                 <Link to="/">Home</Link>
                   <form onSubmit={salvar}>
       

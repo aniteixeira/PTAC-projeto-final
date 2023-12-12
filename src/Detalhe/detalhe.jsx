@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import React from "react";
 import { useState, useEffect } from "react";
-import Header from "../Componente/Header"
 
 export default function Detalhe(){
 const {id} = useParams();
@@ -17,9 +16,8 @@ const videoLauana = lista.filter((objeto) => {
 return (
 videoLauana.map((video) =>
     <div key ={video.id}>
-      <Header/>
       <h1>Detalhes Lauana Prado</h1>
-      <iframe src={'https://youtu.be/46ihksJYvfE?si=Mr4euVy2EUsm50gi' + video.Link.slice(17)} frameBorder="0">
+      <iframe src={'https://youtu.be/46ihksJYvfE?si=Mr4euVy2EUsm50gi' + video.Link.slice(17)}>
     </iframe>
     <p>{video.NomeMusica}</p>
     <p>{video.Artista}</p>

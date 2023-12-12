@@ -6,7 +6,7 @@ export default function Card({video}){
           <div key= {video.id}>
             <p>Nome da Música:{video.NomeMusica}</p>
     <Link to = {`/Detalhe/${video.id}`}>
-    <iframe src={'https://youtu.be/46ihksJYvfE?si=Mr4euVy2EUsm50gi' + video.Link.slice(17)}>
+    <iframe  width="300" height="200" src={'https://www.youtube.com/embed/' + video.Link.slice(17)}>
  </iframe>
     </Link>
         </div>
