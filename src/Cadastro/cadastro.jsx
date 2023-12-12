@@ -45,8 +45,7 @@ export default function Cadastro() {
       
           return (
               <div>
-                <Header/>
-                <div>   
+                <Link to="/">Home</Link>
                   <form onSubmit={salvar}>
       
             <p>Nome da Musica:</p>
@@ -74,21 +73,9 @@ export default function Cadastro() {
                       &emsp;
                   
             <button>Cadastrar Música</button>    
-                 <select onChange={(e) => { setImagem(e.target.value) }}>
-                 </select>
-                 
-                 </form> 
-                 </div>   
-                  {lista.map((ativ)=>
-                  <div key= {ativ.id}>
-                      <Link to={'/detalhe/${ativ.id}'}>
-                      <p>Nome da Musica:{ativ.categoria}</p></Link>
-                      <p>Artista:{ativ.marca}</p>
-                      <p>Data de Lançamento:{ativ.preco}</p>
-                      <p><img src={ativ.imagem} alt=""/></p>
-                      <button onClick={() => remover(ativ.id)}>Remover</button>
-                  </div>
-                  )}  
-              </div>
-          );
-      }
+                 </form>
+                 </div> 
+       
+        );
+}
+        
