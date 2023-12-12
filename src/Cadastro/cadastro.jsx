@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../Componente/Header";
 
 export default function Cadastro() {
-  const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
+  const listaLocalStorage = JSON.parse(localStorage.getItem("Lista")) ||[];
   const [NomeMusica, setNomeMusica] = useState("");
   const [Artista, setArtista] = useState("");
   const [Album, setAlbum] = useState("");
   const [Link, setLink] = useState(""); 
-  const [lista, setLista ] = useState(listaLocalStorage || []);
+  const [lista, setLista ] = useState(listaLocalStorage);
   const [id,setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1 );
  
  useEffect(() => {
@@ -38,7 +38,7 @@ export default function Cadastro() {
           return (
               <div>
                 <Header/>
-                <Link to="/">Home</Link>
+                
                   <form onSubmit={salvar}>
       
             <p>Nome da Musica:</p>

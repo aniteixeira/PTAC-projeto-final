@@ -17,7 +17,7 @@ return (
 videoLauana.map((video) =>
     <div key ={video.id}>
       <h1>Detalhes Lauana Prado</h1>
-      <iframe src={'https://youtu.be/46ihksJYvfE?si=Mr4euVy2EUsm50gi' + video.Link.slice(17)}>
+      <iframe src={'https://www.youtube.com/embed/' + video.Link.slice(17)}>
     </iframe>
     <p>{video.NomeMusica}</p>
     <p>{video.Artista}</p>

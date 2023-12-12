@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../src/Componente/Card";
+import Card from "../Componente/Card";
 export default function Destaque(){
     const DestaqMusi = JSON.parse(localStorage.getItem("Lista"));
     const Resu = DestaqMusi.slice(-3);

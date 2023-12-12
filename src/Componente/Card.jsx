@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-export default function Card({video}){
+export default function Card({lista}){
 
     return(
-        video.map((video) =>
+        lista.map((video) =>
           <div key= {video.id}>
             <p>Nome da Música:{video.NomeMusica}</p>
     <Link to = {`/Detalhe/${video.id}`}>
